@@ -25,6 +25,7 @@ RUN if [ "$TARGET" = "cpu" ] ; then \
         python3-pip \
         python3-venv \
         python3-dev \
+        pybind11-dev \
         autoconf \
         automake \
         libtool \
@@ -55,6 +56,9 @@ RUN if [ "$TARGET" = "cpu" ] ; then \
         pkg-config \
         python3 \
         python3-pip \
+        python3-venv \
+        python3-dev \
+        pybind11-dev \
         autoconf \
         automake \
         libtool \
@@ -86,6 +90,7 @@ RUN if [ "$TARGET" = "cpu" ] ; then \
 # Python packages
 # ------------------------------
 RUN python3 -m pip install --no-cache-dir --upgrade pip setuptools wheel
+RUN python3 -m pip install --no-cache-dir pybind11
 
 # ------------------------------
 # Environment Variables for CUDA

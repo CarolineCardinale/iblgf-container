@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-venv \
     python3-dev \
+    pybind11-dev \
     autoconf \
     automake \
     libtool \
@@ -55,6 +56,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Python packages
 # ------------------------------
 RUN python3 -m pip install --no-cache-dir --upgrade pip setuptools wheel
+RUN python3 -m pip install --no-cache-dir pybind11
 
 # ------------------------------
 # Environment Variables for CUDA
